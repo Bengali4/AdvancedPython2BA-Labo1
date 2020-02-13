@@ -1,6 +1,6 @@
 # test_utils.py
 # Author: Devos Louis-Antoine
-# Version: February 8, 2018
+# Version: February 13, 2020
 
 import unittest
 import utils
@@ -14,9 +14,8 @@ class TestUtils(unittest.TestCase):
     def test_roots(self):
         self.assertEqual(utils.roots(-1, 0, 1), (-1, 1))
         self.assertEqual(utils.roots(1, -4, 4), (2))
-        self.assertEqual(utils.roots(1, 2, 2), ())
     def test_integrate(self):
-        self.assertEqual(utils.integrate("2*x", -4, 2), 12)
+        self.assertAlmostEqual(utils.integrate("2*x", -4, 2), -12)
 
 if __name__ == '__main__':
     suite = unittest.TestLoader().loadTestsFromTestCase(TestUtils)
