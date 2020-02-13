@@ -1,5 +1,5 @@
 # test_utils.py
-# Author: Sébastien Combéfis
+# Author: Devos Louis-Antoine
 # Version: February 8, 2018
 
 import unittest
@@ -9,7 +9,8 @@ class TestUtils(unittest.TestCase):
     def test_fact(self):
         self.assertEqual(utils.fact(2), 2)
         self.assertEqual(utils.fact(0), 1)
-        self.assertEqual(utils.fact(-1), ValueError)
+        with self.assertRaises(ValueError):
+            utils.fact(-1)
     def test_roots(self):
         self.assertEqual(utils.roots(-1, 0, 1), (-1, 1))
         self.assertEqual(utils.roots(1, -4, 4), (2))
